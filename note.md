@@ -63,13 +63,13 @@ docker rmi myredis								 # 删除之前的myredis镜像
 docker load -i myredis.tar 						 # 将myredis.tar恢复成一个镜像
 ```
 
-==测试了一下，出现的问题是，由于==
+==测试了一下，出现的问题是，由于架构不一样导致==
 
 
 
 ==如果MySQL容器使用了镜像卷，那压缩成镜像的过程会出问题吗？==
 
-
+（测试完了，好像镜像卷的内容确实不会保存进来）
 
 ==查看一个容器是否是用了数据卷==
 
@@ -185,3 +185,117 @@ Syncing disks.
 
 
 
+> 初始项目在maven导入依赖的时候总是报错，报错的原因是3.0.5版本的spring-boot-starter-parent似乎找不到。
+>
+> 不太清楚原因。我考虑下载一个单独的maven，不用idea自带的了。（自带的太不方便了，mvn指令也执行不了）
+>
+> 我换了maven库存在的3.2.3试了一下，同样报错：
+>
+> ```
+> Unresolved plugin: 'org.springframework.boot:spring-boot-maven-plugin:3.0.5'
+> ```
+>
+> **查找设置发现maven的路径竟然是错的，还有C盘！这个东西也能记录到项目中吗？**
+>
+> 然后我把maven的路径修改成正确的（idea自带的），然后就好使了。。。
+
+
+
+参考博客：
+
+* [centos7安装docker](https://cloud.tencent.com/developer/article/1701451)
+* [ubuntu扩容](https://blog.csdn.net/qq_44339029/article/details/120597169)
+* [ubuntu扩容](https://blog.csdn.net/qq_34160841/article/details/113058756)
+
+
+
+# 11月21日笔记
+
+## 前端项目
+
+mock是模拟数据的意思，模拟后端给前端发送过来的数据
+
+<img src="/Users/jmjin/Desktop/Snipaste_2024-11-21_14-03-25.png" alt="Snipaste_2024-11-21_14-03-25" style="zoom:50%;" />
+
+* Local storage本地存储是干什么的？好像是用来前端登录记录用的。他和cookie有啥区别
+* 需要下载和安装vue3？我好像没下载。。。
+* TODO：弄清楚登录过程index.vue的相关代码，和登录过程的调用
+* 啥是路由前置守卫？
+
+
+
+userinfo不是通过登录的vue调用的，而是其他的组件调用的。
+
+分析过程：在f12检查中发现了userinfo的request，url是/api/userinfo，然后api中找到/api/userinfo这个请求是getUserinfo的。然后搜索是谁调用了getUserinfo，找到了是permission.js。permission.js是路由的前置守卫，应该是入口文件main.js加载的。
+
+vscode快捷键设置：
+
+Code->首选项->键盘快捷方式
+
+修改go back和go forward
+
+
+
+### main.js
+
+router
+
+pinia
+
+
+
+index.vue是干啥的
+
+
+
+### router
+
+**配置和管理前端路由的核心文件，它使用了 Vue Router 库来创建和控制页面路由**
+
+* 当你在 JavaScript 或 TypeScript 项目中使用 `import router from './router'` 时，系统会自动查找 `router` 文件夹下的 `index.js` 或 `index.ts` 文件。这是因为 `index.js`（或 `index.ts`）被视为文件夹的默认入口文件。
+* 如果 `import redirect from './modules/redirect'` 执行时，系统首先会查找一个名为 `redirect.js`（或 `.ts` 等）的文件。如果没有找到这样的文件，它才会查找名为 `redirect` 的目录，并尝试加载该目录下的 `index.js` 文件。
+* `[...home]` 使用的是 JavaScript 的**扩展运算符**（spread operator），它用于将一个数组的所有元素展开到另一个数组中。在这个语境中，`home` 可能是一个包含多个路由对象的数组，使用扩展运算符可以将这些路由对象直接展开并合并到新的数组中，这种方式常用于组合和管理路由配置。
+* **路由数组** 是一个数组，其中每个元素都是一个**路由对象**，定义了路径、组件和其他路由元数据。在 Vue Router 中，这个数组用于配置路由器实例，告诉 Vue 应用如何根据不同的 URL 地址加载不同的组件。
+* `const Home = () => import('@/views/home/index.vue')` 的语法：这是一个**动态导入**的例子，也是一个利用箭头函数返回一个 Promise 对象的表达式，这个 Promise 将异步地解析为一个 Vue 组件。这种语法是实现路由懒加载的常见方式，在 Vue Router 中广泛使用。当路由被访问时，对应的组件才会被加载，有助于减少应用的初始加载时间。
+* 编程式导航：指的是使用 JavaScript 代码（而非链接点击）来实现页面跳转。在 Vue Router 中，你可以使用 `router.push` 或 `router.replace` 方法来编程式地导航到不同的路由。
+
+
+
+
+
+### promise对象
+
+**Promise** 是 JavaScript 中用于处理异步操作的对象。它表示一个尚未完成但预计将来会完成的操作的结果。
+
+```javascript
+let myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Data received");
+  }, 3000);
+});
+
+myPromise.then(data => {
+  console.log(data);  // 输出: Data received
+});
+
+```
+
+
+
+### 路由
+
+[vue路由测试](https://play.vuejs.org/#eNqFVVtv2zYU/itn6gArmC05btEHTXXTFcWyYZeiLfYy7UGWji02EsmRlOPA8H/fIambnaRD4Fg61++c7yN9DJqc8eirDpKANVIoA0coFOYG30kJJ9gq0cBs3+Is412AEq1B1Xmi2L+ObpvX+3IpI5+b8aFqSJ+rjANErcbQp/v3RrTchLMXlDa7CuZBl07YUoONrCl/bQPT6np9i3UtbLPv0phenVm6L3rQRgm+W79vlULeIQaZmypJ484HxyN87xzRtq3rj+SE08mViX2dlOf7vuAnh/I3xu/AiDdZEGfB+mdBz3ArGkzj0f9sRr4hy5D2zr49ykvjvmdqeTmv9RfDe4i7uM6dxsNiaF9+l0+y+Ts2Qj3cMm3oa94Zfd0py4uBzYFPO6Br3ZPaGzpme9rtQGdxg2WUgOC6Y0PDG/jbjnL0vMAsnhEsQcU4UZaMbU/z8zC3x/PYsbcN/ueilaJW03nDoy1Y+VUkT+0nvHI9PVB6PJE8M44HN2iJ27yt+9q09ek+rFR1oZg0RM5FgmvboKlEqRP/BrATX4SDH171JgBD4CIvThXJVldhP7Y7J9DtxP4nxZKk+470cnFQVuseHh2TlTduWmMEh5uiZsUdSXPAcKlOH/hIZmfEjhODRtPaozNKjyiiGcqn75Ej0Pl3lMyHp2fFeMHnEB/SRia+ict6ep/GXBWV1UGHyGtgh5O1K0KvuC8T/duieoi6tLdvYUYg+rXTmKH3jLmeKoW0owLDI7h8IrnvfAKrIargxfQ/lA0LHjmr8w3W3X3w2dVMIGWchoH9ohEl1pFRrCE2fccsgCY/1Mh3piLjaknc+pujr3TOqedk0eSSrg/BiVU3WtY5dBYMks2CkRtrzoLKGKmTOG65vNtFtON4jLh5Fb2MlnFJJ2tijVA3i40S99rdV1ngNmtr31BQXOLeCFHrRS7Zcy0eBd68jl5H13HNNjFVjxkv8eBq94unMY0mQWzZ7mJIKwtWo/pTGkaCORs2p9+Z+1+dzagWB6BFhcXdE/av+uAhf1RI0+1xMpzJFWnOuz98/gMP9Dw4icW2puhvOD+hFnVrMfqwn1peEuxJnEP7i+OM8d0X/eFgkOt+KAt0FLIj8v03Rh/hvoxeTbaozUONOiq0/aGhX6w5aY1xn7cRqkSVwEoegMCyEl4sl8sf3d1H5RhfbATdKk0C10t5cHaZlyWBHSzUJeNUFtaQww/08Tenz65xSzf+NLJaTTuP5UcARVFMACSwpL9VVyE4/QesCg/V)
+
+main.js
+
+```javascript
+import { createApp } from 'vue'
+import router from './router'
+import App from './app.vue'
+
+createApp(App) // 创建一个新的 Vue 应用实例，将 App 作为根组件。
+  .use(router) // 将 Vue Router 插件注册到这个应用中，这允许你在应用中使用路由功能。
+  .mount('#app') // 将 Vue 应用挂载到 DOM 中的一个具体元素上（通常是一个 id 为 app 的 div 元素）
+```
+
+* 
