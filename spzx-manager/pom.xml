@@ -19,6 +19,11 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.jasper</groupId>
+            <artifactId>spzx-model</artifactId>
+            <version>1.0-LEARN</version>
+        </dependency>
 
 
         <!-- redis的起步依赖 -->
