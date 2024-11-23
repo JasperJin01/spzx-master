@@ -31,7 +31,12 @@
             <version>1.0-LEARN</version>
         </dependency>
 
-        <!-- 这个模块是封装的数据库相关的？ -->
+        <!-- 这个模块是封装的数据库相关的 -->
+        <dependency>
+            <groupId>com.jasper</groupId>
+            <artifactId>spzx-model</artifactId>
+            <version>1.0-LEARN</version>
+        </dependency>
     </dependencies>
 
 

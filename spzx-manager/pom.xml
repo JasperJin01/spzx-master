@@ -18,12 +18,12 @@
     </properties>
 
     <dependencies>
-
-        <dependency>
-            <groupId>com.jasper</groupId>
-            <artifactId>spzx-model</artifactId>
-            <version>1.0-LEARN</version>
-        </dependency>
+        <!-- manager引入了common-service, common-service中引入了spzx-model -->
+<!--        <dependency>-->
+<!--            <groupId>com.jasper</groupId>-->
+<!--            <artifactId>spzx-model</artifactId>-->
+<!--            <version>1.0-LEARN</version>-->
+<!--        </dependency>-->
 
 
         <!-- redis的起步依赖 -->
