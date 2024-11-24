@@ -28,20 +28,27 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public LoginVo login(LoginDto loginDto) {
+        // 校验验证码
+        String inputCaptcha = loginDto.getCaptcha();
+        String inputCodeKey = loginDto.getCodeKey();
+        String codeValue = redisTemplate.opsForValue().get("user:login:captcha:" + inputCodeKey);
+        System.out.println("codeValue = " + codeValue);
+        PowerAssert.isTrue(codeValue != null && inputCaptcha.equals(codeValue), "验证码错误！");
+
+
         SysUser sysUser = sysUserMapper.selectUserByName(loginDto.getUserName());
 
-        // 账号不存在的情况
+        // 校验账号
         PowerAssert.notNull(sysUser, "账号不存在！");
 
         String inputPwd = loginDto.getPassword();
         String md5inputPwd = DigestUtils.md5DigestAsHex(inputPwd.getBytes());
 
-        // 密码错误的情况
+        // 校验密码
         PowerAssert.isTrue(md5inputPwd.equals(sysUser.getPassword()), "密码错误！");
 
 
         String token = UUID.randomUUID().toString().replace("-", "");
-
         // 构建响应结果对象
         LoginVo loginVo = new LoginVo();
         loginVo.setToken(token);

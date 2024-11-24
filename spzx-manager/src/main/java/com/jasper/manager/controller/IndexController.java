@@ -1,10 +1,12 @@
 package com.jasper.manager.controller;
 
 import com.jasper.manager.service.SysUserService;
+import com.jasper.manager.service.ValidateCodeService;
 import com.jasper.model.dto.system.LoginDto;
 import com.jasper.model.entity.system.SysUser;
 import com.jasper.model.vo.common.Result;
 import com.jasper.model.vo.system.LoginVo;
+import com.jasper.model.vo.system.ValidateCodeVo;
 import com.jasper.util.PowerAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +26,9 @@ public class IndexController {
     @Autowired
     SysUserService sysUserService;
 
+    @Autowired
+    ValidateCodeService validateCodeService;
+
     @PostMapping("/login")
     public Result<LoginVo> login(@RequestBody LoginDto loginDto) { // TODO 不添加 @RequestBody，前端发过来的数据不能正确解析
         System.out.println("loginDto = " + loginDto);
@@ -41,7 +46,13 @@ public class IndexController {
         SysUser sysUser = sysUserService.gerUserInfo(token);
 
         return Result.ok(sysUser);
+    }
 
+    // 生成验证码
+    @GetMapping("/generateValidateCode")
+    public Result<ValidateCodeVo> getValidateCode() {
+        ValidateCodeVo captcha = validateCodeService.getCaptcha();
+        return Result.ok(captcha);
     }
 
 }

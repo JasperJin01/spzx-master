@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2dfd026-b90e-46c0-8eae-07745cec8047" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spzx-common/common-service/src/main/java/com/jasper/common/anno/EnableGlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spzx-common/common-service/src/main/java/com/jasper/common/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spzx-common/common-util/src/main/java/com/jasper/util/PowerAssert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/ValidateCodeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/impl/ValidateCodeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-model/src/main/java/com/jasper/model/vo/system/ValidateCodeVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-common/common-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-common/common-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-common/common-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-common/common-util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/ManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/ManagerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-common/common-service/src/main/java/com/jasper/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-common/common-util/src/main/java/com/jasper/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/SysUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/impl/SysUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -60,6 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "/Users/jmjin/Developer/IdeaDemo/spzx-master/spzx-model/src/main/java/com/jasper",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,9 +69,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.jasper.manager.mapper" />
       <recent name="com.jasper.manager.service.impl" />
       <recent name="com.jasper.manager.service" />
+      <recent name="com.jasper.model.vo.system" />
+      <recent name="com.jasper.manager.mapper" />
     </key>
   </component>
   <component name="RunManager">
@@ -108,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732275678530</updated>
       <workItem from="1732275681105" duration="3582000" />
-      <workItem from="1732279274687" duration="18641000" />
+      <workItem from="1732279274687" duration="24412000" />
     </task>
     <task id="LOCAL-00001" summary="添加登录功能">
       <option name="closed" value="true" />
@@ -126,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732283519207</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="添加断言、统一异常处理、getUserInfo、user:login缓存">
+      <option name="closed" value="true" />
+      <created>1732404201383</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732404201383</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +140,7 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="添加登录功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加登录功能" />
+    <MESSAGE value="添加断言、统一异常处理、getUserInfo、user:login缓存" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加断言、统一异常处理、getUserInfo、user:login缓存" />
   </component>
 </project>
