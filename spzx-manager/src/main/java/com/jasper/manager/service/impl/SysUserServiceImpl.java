@@ -6,7 +6,7 @@ import com.jasper.manager.mapper.SysUserMapper;
 import com.jasper.manager.service.SysUserService;
 import com.jasper.model.dto.system.LoginDto;
 import com.jasper.model.entity.system.SysUser;
-import com.jasper.model.vo.common.Result;
+import com.jasper.model.entity.system.SysUserThreadLocal;
 import com.jasper.model.vo.system.LoginVo;
 import com.jasper.util.PowerAssert;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,7 @@ public class SysUserServiceImpl implements SysUserService {
         PowerAssert.isTrue(codeValue != null && inputCaptcha.equals(codeValue), "验证码错误！");
 
 
-        SysUser sysUser = sysUserMapper.selectUserByName(loginDto.getUserName());
+        SysUser sysUser = sysUserMapper.selectByUserName(loginDto.getUserName());
 
         // 校验账号
         PowerAssert.notNull(sysUser, "账号不存在！");
@@ -69,10 +69,10 @@ public class SysUserServiceImpl implements SysUserService {
         // TODO null 空处理
         PowerAssert.notNull(token, "token不能为空！");
 
-        // 从缓存中取出 SysUser
-        String userJson = redisTemplate.opsForValue().get("user:login:" + token);
-        SysUser sysUser = JSON.parseObject(userJson, SysUser.class);
+        // 从threadLocal中取出 SysUser
+        SysUser sysUser = SysUserThreadLocal.threadLocal.get();
         System.out.println("sysUser = " + sysUser);
+
         return sysUser;
     }
 }

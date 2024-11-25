@@ -7,7 +7,7 @@
         id,username,password,name,phone,avatar,description,status,create_time,update_time,is_deleted
     </sql>
 
-    <select id="selectUserByName" parameterType="java.lang.String" resultType="com.jasper.model.entity.system.SysUser">
+    <select id="selectByUserName" parameterType="java.lang.String" resultType="com.jasper.model.entity.system.SysUser">
         select
         <include refid="columns"></include>
         from sys_user where username = #{userName} and is_deleted = 0

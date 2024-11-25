@@ -12,7 +12,15 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public Result exceptionHandler(Exception e) {
         // 打印异常信息
-        System.out.println("程序出现异常，打印异常信息: ");
+        System.out.println("程序出现通用异常，打印异常信息: ");
+        e.printStackTrace();
+
+        return Result.fail(e.getMessage());
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public Result illegalArgumentExceptionHandler(IllegalArgumentException e) {
+        System.out.println("程序出现非法参数异常，打印异常信息：");
         e.printStackTrace();
 
         return Result.fail(e.getMessage());
