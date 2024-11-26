@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2dfd026-b90e-46c0-8eae-07745cec8047" name="Changes" comment="添加验证码功能">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/config/WebMvcConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/interceptor/LoginAuthInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spzx-model/src/main/java/com/jasper/model/entity/system/SysUserThreadLocal.java" afterDir="false" />
+    <list default="true" id="c2dfd026-b90e-46c0-8eae-07745cec8047" name="Changes" comment="添加拦截器验证用户功能">
+      <change afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/controller/SysRoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/mapper/SysRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/SysRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/impl/SysRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-model/src/main/java/com/jasper/model/entity/system/SysRole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-common/common-service/src/main/java/com/jasper/common/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-common/common-service/src/main/java/com/jasper/common/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/mapper/SysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/mapper/SysUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/impl/SysUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/resources/mapper/system/SysUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/resources/mapper/system/SysUserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +21,27 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Mybatis Mapper" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2d9c3cd6-b961-42f5-a137-16f749457731" />
+        <option name="url" value="git@github.com:JasperJin01/spzx-master.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -71,10 +83,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.jasper.manager.mapper" />
       <recent name="com.jasper.manager.service.impl" />
       <recent name="com.jasper.manager.service" />
       <recent name="com.jasper.model.vo.system" />
-      <recent name="com.jasper.manager.mapper" />
     </key>
   </component>
   <component name="RunManager">
@@ -106,7 +118,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732275678530</updated>
       <workItem from="1732275681105" duration="3582000" />
-      <workItem from="1732279274687" duration="33056000" />
+      <workItem from="1732279274687" duration="42819000" />
     </task>
     <task id="LOCAL-00001" summary="添加登录功能">
       <option name="closed" value="true" />
@@ -140,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732410785436</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加拦截器验证用户功能">
+      <option name="closed" value="true" />
+      <created>1732531435561</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732531435561</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +183,7 @@
     <MESSAGE value="添加登录功能" />
     <MESSAGE value="添加断言、统一异常处理、getUserInfo、user:login缓存" />
     <MESSAGE value="添加验证码功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加验证码功能" />
+    <MESSAGE value="添加拦截器验证用户功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加拦截器验证用户功能" />
   </component>
 </project>

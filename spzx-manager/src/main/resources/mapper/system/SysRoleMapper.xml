@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jasper.manager.mapper.SysRoleMapper">
+    <select id="selectSysRoleListByPage"
+            resultType="com.jasper.model.entity.system.SysRole">
+        select * from sys_role
+        <where>
+            <if test="roleName != null and roleName != ''">
+                and role_name like concat('%',#{roleName},'%')
+            </if>
+            and is_deleted = 0
+        </where>
+
+    </select>
+<!--    NOTE 这里面的 if 中的 roleName 没有加对象.，但是#中的加了对象.，这个到底要不要加？
+             不能加！加了报错
+             paramtype 好像可以省略？不用写？-->
+</mapper>
