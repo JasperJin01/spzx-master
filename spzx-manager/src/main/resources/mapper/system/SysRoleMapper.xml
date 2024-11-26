@@ -47,4 +47,10 @@
                 #{description})
     </insert>
 
+    <update id="deleteSysRoleById">
+        update sys_role
+        set is_deleted = 1
+        where id = #{id}
+    </update>
+
 </mapper>

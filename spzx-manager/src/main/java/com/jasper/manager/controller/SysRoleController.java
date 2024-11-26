@@ -38,4 +38,10 @@ public class SysRoleController {
         return Result.ok();
     }
 
+    @DeleteMapping("/deleteSysRoleById/{id}")
+    public Result deleteSysRoleById(@PathVariable("id") Integer id) {
+        sysRoleService.deleteSysRoleById(id);
+        return Result.ok();
+    }
+
 }

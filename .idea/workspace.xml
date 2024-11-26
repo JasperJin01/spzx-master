@@ -118,7 +118,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732275678530</updated>
       <workItem from="1732275681105" duration="3582000" />
-      <workItem from="1732279274687" duration="48806000" />
+      <workItem from="1732279274687" duration="50712000" />
     </task>
     <task id="LOCAL-00001" summary="添加登录功能">
       <option name="closed" value="true" />
@@ -168,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732609992838</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="添加SysRole插入和修改功能">
+      <option name="closed" value="true" />
+      <created>1732641065163</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732641065163</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +201,7 @@
     <MESSAGE value="添加验证码功能" />
     <MESSAGE value="添加拦截器验证用户功能" />
     <MESSAGE value="添加SysRole查询功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加SysRole查询功能" />
+    <MESSAGE value="添加SysRole插入和修改功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加SysRole插入和修改功能" />
   </component>
 </project>
