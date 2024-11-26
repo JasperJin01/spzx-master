@@ -7,4 +7,8 @@ import java.util.List;
 
 public interface SysRoleMapper {
     List<SysRole> selectSysRoleListByPage(SysRoleDto sysRoleDto);
+
+    void updateSysRole(SysRole sysRole);
+
+    void insertSysRole(SysRole sysRole);
 }

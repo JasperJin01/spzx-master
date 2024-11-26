@@ -6,4 +6,9 @@ import com.jasper.model.entity.system.SysRole;
 
 public interface SysRoleService {
     PageInfo<SysRole> getSysRoleListByPage(Integer page, Integer limit, SysRoleDto sysRoleDto);
+
+    void updateSysRole(SysRole sysRole);
+
+    void addSysRole(SysRole sysRole);
+
 }

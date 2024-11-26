@@ -25,4 +25,17 @@ public class SysRoleController {
         return Result.ok(pageInfo);
     }
 
+
+    @PutMapping("/updateSysRole")
+    public Result updateSysRole(@RequestBody SysRole sysRole) {
+        sysRoleService.updateSysRole(sysRole);
+        return Result.ok();
+    }
+
+    @PostMapping("/addSysRole")
+    public Result addSysRole(@RequestBody SysRole sysRole) {
+        sysRoleService.addSysRole(sysRole);
+        return Result.ok();
+    }
+
 }
