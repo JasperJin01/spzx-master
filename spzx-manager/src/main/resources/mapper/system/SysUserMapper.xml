@@ -12,4 +12,22 @@
         <include refid="columns"></include>
         from sys_user where username = #{userName} and is_deleted = 0
     </select>
+
+    <select id="selectSysUserListByPage"
+            resultType="com.jasper.model.entity.system.SysUser">
+        select * from sys_user
+        <where>
+            <if test="keyword != null and keyword != ''">
+                and (username like "%"#{keyword}"%" or name like "%"#{keyword}"%" or phone like "%"#{keyword}"%")
+            </if>
+            <if test="createTimeBegin != null and createTimeBegin != ''">
+                and create_time >= #{createTimeBegin}
+            </if>
+            <if test="createTimeEnd != null and createTimeEnd != ''">
+                and create_time &lt;= #{createTimeEnd}
+            </if>
+            and is_deleted = 0
+        </where>
+        order by id desc
+    </select>
 </mapper>

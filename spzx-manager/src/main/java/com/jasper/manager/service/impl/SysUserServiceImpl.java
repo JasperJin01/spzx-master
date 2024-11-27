@@ -2,9 +2,12 @@ package com.jasper.manager.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.jasper.manager.mapper.SysUserMapper;
 import com.jasper.manager.service.SysUserService;
 import com.jasper.model.dto.system.LoginDto;
+import com.jasper.model.dto.system.SysUserDto;
 import com.jasper.model.entity.system.SysUser;
 import com.jasper.model.entity.system.SysUserThreadLocal;
 import com.jasper.model.vo.system.LoginVo;
@@ -14,6 +17,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -74,5 +78,13 @@ public class SysUserServiceImpl implements SysUserService {
         System.out.println("sysUser = " + sysUser);
 
         return sysUser;
+    }
+
+    @Override
+    public PageInfo<SysUser> getSysUserListByPage(Integer page, Integer limit, SysUserDto sysUserDto) {
+        PageHelper.startPage(page, limit);
+        List<SysUser> sysUsers = sysUserMapper.selectSysUserListByPage(sysUserDto);
+        PageInfo<SysUser> pageInfo = new PageInfo<>(sysUsers);
+        return pageInfo;
     }
 }
