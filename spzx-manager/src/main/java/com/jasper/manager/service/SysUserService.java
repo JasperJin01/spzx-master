@@ -12,4 +12,11 @@ public interface SysUserService {
     SysUser gerUserInfo(String token);
 
     PageInfo<SysUser> getSysUserListByPage(Integer page, Integer limit, SysUserDto sysUserDto);
+
+    void updateSysUser(SysUser sysUser);
+
+    void addSysUser(SysUser sysUser);
+
+    void deleteSysUserById(Integer id);
+
 }

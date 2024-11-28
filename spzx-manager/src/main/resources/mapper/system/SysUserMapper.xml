@@ -15,7 +15,7 @@
 
     <select id="selectSysUserListByPage"
             resultType="com.jasper.model.entity.system.SysUser">
-        select * from sys_user
+        select <include refid="columns"></include> from sys_user
         <where>
             <if test="keyword != null and keyword != ''">
                 and (username like "%"#{keyword}"%" or name like "%"#{keyword}"%" or phone like "%"#{keyword}"%")
@@ -30,4 +30,58 @@
         </where>
         order by id desc
     </select>
+
+    <insert id="insertSysUser">
+        insert into sys_user(id,
+                             username,
+                             password,
+                             name,
+                             phone,
+                             avatar,
+                             description
+                             )
+        values (#{id},
+                #{username},
+                #{password},
+                #{name},
+                #{phone},
+                #{avatar},
+                #{description}
+                )
+
+    </insert>
+    <update id="updateSysUser">
+        update sys_user
+        <set>
+            <if test="username != null and username != ''">
+                username = #{username},
+            </if>
+            <if test="password != null and password != ''">
+                password = #{password},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="phone != null and phone != ''">
+                phone = #{phone},
+            </if>
+            <if test="avatar != null and avatar != ''">
+                avator = #{avator},
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description},
+            </if>
+            <if test="status != null and status != ''">
+                status = #{status},
+            </if>
+        </set>
+            <where>id = #{id}</where>
+    </update>
+    <update id="deleteSysUserById">
+        update sys_user
+        set is_deleted = 1
+        where id = {id}
+    </update>
+
+
 </mapper>

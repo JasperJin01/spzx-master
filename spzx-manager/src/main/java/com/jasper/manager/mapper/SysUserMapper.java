@@ -13,4 +13,12 @@ public interface SysUserMapper {
     SysUser selectByUserName(String userName);
 
     List<SysUser> selectSysUserListByPage(SysUserDto sysUserDto);
+
+    void updateSysUser(SysUser sysUser);
+
+    void insertSysUser(SysUser sysUser);
+
+    void deleteSysUserById(Integer id);
+
+
 }

@@ -87,4 +87,21 @@ public class SysUserServiceImpl implements SysUserService {
         PageInfo<SysUser> pageInfo = new PageInfo<>(sysUsers);
         return pageInfo;
     }
+
+    @Override
+    public void updateSysUser(SysUser sysUser) {
+        sysUserMapper.updateSysUser(sysUser);
+    }
+
+    @Override
+    public void addSysUser(SysUser sysUser) {
+        sysUserMapper.insertSysUser(sysUser);
+    }
+
+    @Override
+    public void deleteSysUserById(Integer id) {
+        sysUserMapper.deleteSysUserById(id);
+    }
+
+
 }
