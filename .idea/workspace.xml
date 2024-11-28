@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2dfd026-b90e-46c0-8eae-07745cec8047" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/controller/FailUploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/FileUploadService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/impl/FileUploadServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-common/common-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-common/common-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/controller/SysUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/mapper/SysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/mapper/SysUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/SysUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/impl/SysUserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/resources/mapper/system/SysUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/resources/mapper/system/SysUserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Interface" />
         <option value="Mybatis Mapper" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -31,11 +29,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -75,7 +73,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "terminal",
+    "settings.editor.selected.configurable": "ai.codegeex.plugin.settings.ApplicationConfigurable",
     "spring.configuration.checksum": "f8380ef06ef1051c7914ab9def88c5ce",
     "vue.rearranger.settings.migration": "true"
   }
@@ -85,9 +83,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.jasper.manager.mapper" />
       <recent name="com.jasper.manager.service.impl" />
       <recent name="com.jasper.manager.service" />
+      <recent name="com.jasper.manager.mapper" />
       <recent name="com.jasper.model.vo.system" />
     </key>
   </component>
@@ -120,7 +118,8 @@
       <option name="presentableId" value="Default" />
       <updated>1732275678530</updated>
       <workItem from="1732275681105" duration="3582000" />
-      <workItem from="1732279274687" duration="65124000" />
+      <workItem from="1732279274687" duration="67876000" />
+      <workItem from="1732817070334" duration="2487000" />
     </task>
     <task id="LOCAL-00001" summary="添加登录功能">
       <option name="closed" value="true" />
@@ -194,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732728507761</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="添加SysUser增删改接口和实现（不包含头像）">
+      <option name="closed" value="true" />
+      <created>1732782206434</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732782206434</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +229,8 @@
     <MESSAGE value="添加SysRole插入和修改功能" />
     <MESSAGE value="添加SysRole删除功能" />
     <MESSAGE value="添加SysUser查询功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加SysUser查询功能" />
+    <MESSAGE value="添加SysUser增删改接口和实现（不包含头像）" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加SysUser增删改接口和实现（不包含头像）" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
