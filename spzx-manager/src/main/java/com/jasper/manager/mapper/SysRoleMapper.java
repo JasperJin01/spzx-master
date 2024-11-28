@@ -13,4 +13,7 @@ public interface SysRoleMapper {
     void insertSysRole(SysRole sysRole);
 
     void deleteSysRoleById(Integer id);
+
+    // 查询所有角色，其实是可以和 selectSysRoleListByPage 方法合并的
+    List<SysRole> selectSysRoleList();
 }

@@ -4,6 +4,8 @@ import com.github.pagehelper.PageInfo;
 import com.jasper.model.dto.system.SysRoleDto;
 import com.jasper.model.entity.system.SysRole;
 
+import java.util.Map;
+
 public interface SysRoleService {
     PageInfo<SysRole> getSysRoleListByPage(Integer page, Integer limit, SysRoleDto sysRoleDto);
 
@@ -12,4 +14,6 @@ public interface SysRoleService {
     void addSysRole(SysRole sysRole);
 
     void deleteSysRoleById(Integer id);
+
+    Map<String, Object> getAllRoleList(Integer userId);
 }

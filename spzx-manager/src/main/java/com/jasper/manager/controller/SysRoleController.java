@@ -8,6 +8,8 @@ import com.jasper.model.vo.common.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/admin/system/sysRole")
 @CrossOrigin(allowCredentials = "true", originPatterns = "*", allowedHeaders = "*")
@@ -42,6 +44,13 @@ public class SysRoleController {
     public Result deleteSysRoleById(@PathVariable("id") Integer id) {
         sysRoleService.deleteSysRoleById(id);
         return Result.ok();
+    }
+
+
+    @GetMapping("getAllRoleList/{userId}")
+    public Result<Map<String, Object>> getAllRoleList(@PathVariable("userId") Integer userId) {
+        Map<String, Object> allRoleList = sysRoleService.getAllRoleList(userId);
+        return Result.ok(allRoleList);
     }
 
 }
