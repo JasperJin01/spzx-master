@@ -5,8 +5,10 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.jasper.manager.mapper.SysRoleMapper;
 import com.jasper.manager.mapper.SysUserRoleMapper;
+import com.jasper.manager.service.SysMenuService;
 import com.jasper.manager.service.SysRoleService;
 import com.jasper.model.dto.system.SysRoleDto;
+import com.jasper.model.entity.system.SysMenu;
 import com.jasper.model.entity.system.SysRole;
 import com.jasper.util.PowerAssert;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,9 @@ public class SysRoleServiceImpl implements SysRoleService {
 
     @Autowired
     private SysUserRoleMapper sysUserRoleMapper;
+
+    @Autowired
+    private SysMenuService sysMenuService;
 
     @Override
     public PageInfo<SysRole> getSysRoleListByPage(Integer page, Integer limit, SysRoleDto sysRoleDto) {
@@ -66,6 +71,20 @@ public class SysRoleServiceImpl implements SysRoleService {
         m.put("allRoles", sysRoles);
         m.put("userRoleIds", roleIds);
 
+        return m;
+    }
+
+    @Override
+    public Map<String, Object> getSysMenuTreeIds(Long roleId) {
+        // 获取所有菜单 sysMenuList
+        List<SysMenu> menusTree = sysMenuService.findNodesByTree();
+
+        // 获取角色拥有的菜单 roleMenuIds
+        List<Long> roleMenuIds = sysRoleMapper.selectMenuIdsByRoleId(roleId);
+
+        Map<String, Object> m = new HashMap<>();
+        m.put("sysMenuList", menusTree);
+        m.put("roleMenuIds", roleMenuIds);
         return m;
     }
 

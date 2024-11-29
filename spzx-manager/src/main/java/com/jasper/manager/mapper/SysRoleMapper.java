@@ -16,4 +16,7 @@ public interface SysRoleMapper {
 
     // 查询所有角色，其实是可以和 selectSysRoleListByPage 方法合并的
     List<SysRole> selectSysRoleList();
+
+    // sql 添加 is_half = 0，为了防止前端回显数据时，el-tree setCheckedKeys 根节点会把子节点都选上
+    List<Long> selectMenuIdsByRoleId(Long roleId);
 }

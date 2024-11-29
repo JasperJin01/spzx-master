@@ -53,4 +53,11 @@ public class SysRoleController {
         return Result.ok(allRoleList);
     }
 
+    // 根据角色id，返回菜单树 和 角色拥有的菜单ids
+    @GetMapping("getSysMenuTreeIds/{roleId}")
+    public Result<Map<String, Object>> getSysMenuTreeIds(@PathVariable("roleId") Long roleId) {
+        Map<String, Object> sysMenuTreeIds = sysRoleService.getSysMenuTreeIds(roleId);
+        return Result.ok(sysMenuTreeIds);
+    }
+
 }

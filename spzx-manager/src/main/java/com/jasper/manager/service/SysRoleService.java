@@ -16,4 +16,6 @@ public interface SysRoleService {
     void deleteSysRoleById(Integer id);
 
     Map<String, Object> getAllRoleList(Integer userId);
+
+    Map<String, Object> getSysMenuTreeIds(Long roleId);
 }
