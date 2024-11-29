@@ -1,8 +1,8 @@
 package com.jasper.manager.service;
 
-import com.jasper.model.dto.system.AssignRoleDto;
+import com.jasper.model.dto.system.AssignUserRoleDto;
 
 public interface SysUserRoleService {
 
-    void assignRoleToUser(AssignRoleDto assignRoleDto);
+    void assignRoleToUser(AssignUserRoleDto assignUserRoleDto);
 }

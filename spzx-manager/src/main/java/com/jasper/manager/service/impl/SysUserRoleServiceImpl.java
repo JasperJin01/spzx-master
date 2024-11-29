@@ -2,7 +2,7 @@ package com.jasper.manager.service.impl;
 
 import com.jasper.manager.mapper.SysUserRoleMapper;
 import com.jasper.manager.service.SysUserRoleService;
-import com.jasper.model.dto.system.AssignRoleDto;
+import com.jasper.model.dto.system.AssignUserRoleDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +14,12 @@ public class SysUserRoleServiceImpl implements SysUserRoleService {
 
     // TODO 感觉这种操作应该需要事务
     @Override
-    public void assignRoleToUser(AssignRoleDto assignRoleDto) {
+    public void assignRoleToUser(AssignUserRoleDto assignUserRoleDto) {
         // 删除
-        sysUserRoleMapper.deleteByUserId(assignRoleDto.getUserId());
+        sysUserRoleMapper.deleteByUserId(assignUserRoleDto.getUserId());
 
         // 添加
-        sysUserRoleMapper.insertBatch(assignRoleDto.getUserId(), assignRoleDto.getRoleIds());
+        sysUserRoleMapper.insertBatch(assignUserRoleDto.getUserId(), assignUserRoleDto.getRoleIds());
 
 
     }

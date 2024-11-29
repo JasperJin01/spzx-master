@@ -27,6 +27,7 @@ public class LoginAuthInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        System.out.println("LoginAuthInterceptor 去 redis 缓存查看token是否存在");
 
         // 获取请求方式
         String method = request.getMethod();

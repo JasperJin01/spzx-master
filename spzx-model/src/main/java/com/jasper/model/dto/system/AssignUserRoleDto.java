@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class AssignRoleDto {
+public class AssignUserRoleDto {
     /**
      * 用户id
      */
