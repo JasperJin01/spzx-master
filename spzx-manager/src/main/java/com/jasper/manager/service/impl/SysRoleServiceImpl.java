@@ -3,6 +3,8 @@ package com.jasper.manager.service.impl;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.jasper.common.helper.SysMenuHelper;
+import com.jasper.manager.mapper.SysMenuMapper;
 import com.jasper.manager.mapper.SysRoleMapper;
 import com.jasper.manager.mapper.SysUserRoleMapper;
 import com.jasper.manager.service.SysMenuService;
@@ -28,7 +30,8 @@ public class SysRoleServiceImpl implements SysRoleService {
     private SysUserRoleMapper sysUserRoleMapper;
 
     @Autowired
-    private SysMenuService sysMenuService;
+    private SysMenuMapper sysMenuMapper;
+
 
     @Override
     public PageInfo<SysRole> getSysRoleListByPage(Integer page, Integer limit, SysRoleDto sysRoleDto) {
@@ -77,7 +80,7 @@ public class SysRoleServiceImpl implements SysRoleService {
     @Override
     public Map<String, Object> getSysMenuTreeIds(Long roleId) {
         // 获取所有菜单 sysMenuList
-        List<SysMenu> menusTree = sysMenuService.findNodesByTree();
+        List<SysMenu> menusTree = SysMenuHelper.buildTree(sysMenuMapper.selectAll());
 
         // 获取角色拥有的菜单 roleMenuIds
         List<Long> roleMenuIds = sysRoleMapper.selectMenuIdsByRoleId(roleId);

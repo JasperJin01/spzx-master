@@ -10,4 +10,6 @@ public interface SysMenuMapper {
     void updateById(SysMenu sysMenu);
 
     void insert(SysMenu sysMenu);
+
+    List<SysMenu> selectByUserId(Long userId);
 }
