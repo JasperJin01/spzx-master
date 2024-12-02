@@ -38,4 +38,9 @@ public class BrandServiceImpl implements BrandService {
     public void deleteById(Long id) {
         brandMapper.deleteById(id);
     }
+
+    @Override
+    public List<Brand> findAll() {
+        return brandMapper.selectAll();
+    }
 }

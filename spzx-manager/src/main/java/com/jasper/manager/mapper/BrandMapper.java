@@ -12,4 +12,6 @@ public interface BrandMapper {
     void updateById(Brand brand);
 
     void deleteById(Long id);
+
+    List<Brand> selectAll();
 }

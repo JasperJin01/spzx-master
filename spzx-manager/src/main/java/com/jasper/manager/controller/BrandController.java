@@ -7,6 +7,8 @@ import com.jasper.model.vo.common.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/admin/product/brand")
 @CrossOrigin(allowCredentials = "true", originPatterns = "*", allowedHeaders = "*")
@@ -38,6 +40,12 @@ public class BrandController {
     public Result deleteById(@PathVariable Long id) {
         brandService.deleteById(id);
         return Result.ok();
+    }
+
+    @GetMapping("findAll")
+    public Result<List<Brand>> findAll() {
+        List<Brand> brands = brandService.findAll();
+        return Result.ok(brands) ;
     }
 
 

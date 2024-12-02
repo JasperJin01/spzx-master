@@ -42,4 +42,7 @@
         where is_deleted = 0
         order by id desc
     </select>
+    <select id="selectAll" resultType="com.jasper.model.entity.product.Brand">
+        select <include refid="columns"/> from brand where is_deleted = 0
+    </select>
 </mapper>

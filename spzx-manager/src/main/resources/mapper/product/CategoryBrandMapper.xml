@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jasper.manager.mapper.CategoryBrandMapper">
+    <insert id="insertCategoryBrand">
+        insert into category_brand (id,
+                                    brand_id,
+                                    category_id,
+                                    create_time,
+                                    update_time,
+                                    is_deleted)
+        values (#{id},
+                #{brandId},
+                #{categoryId},
+                now(),
+                now(),
+                0)
+    </insert>
+    <update id="updateById">
+        update category_brand set
+        <if test="brandId != null and brandId != ''">
+            brand_id = #{brandId},
+        </if>
+        <if test="categoryId != null and categoryId != ''">
+            category_id = #{categoryId},
+        </if>
+        update_time = now()
+        where
+        id = #{id}
+    </update>
+    <select id="selectByPage" resultType="com.jasper.model.entity.product.CategoryBrand">
+        SELECT
+        cb.id,
+        cb.brand_id,
+        cb.category_id,
+        b.`name` as brandName,
+        c.name as categoryName,
+        b.logo
+        FROM
+        category_brand cb,
+        brand b,
+        category c
+        <where>
+            cb.brand_id = b.id AND cb.category_id = c.id
+            <if test="brandId != null and brandId != ''">
+                and cb.brand_id = #{brandId}
+            </if>
+            <if test="categoryId != null and categoryId != ''">
+                and cb.category_id = #{categoryId}
+            </if>
+            and cb.is_deleted = 0
+        </where>
+
+    </select>
+    <select id="selectBrandByCategoryId" resultType="com.jasper.model.entity.product.Brand">
+        select b.*
+        from category_brand cb
+                 left join brand b on b.id = cb.brand_id
+        where cb.category_id = #{categoryId}
+          and cb.is_deleted = 0
+        order by cb.id desc
+
+    </select>
+</mapper>
