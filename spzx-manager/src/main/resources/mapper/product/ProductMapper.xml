@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jasper.manager.mapper.ProductMapper">
+    <insert id="insertProduct">
+        insert into product (
+            id,
+            name,
+            brand_id,
+            category1_id,
+            category2_id,
+            category3_id,
+            unit_name,
+            slider_urls,
+            spec_value,
+            status,
+            audit_status,
+            audit_message,
+            create_time,
+            update_time,
+            is_deleted
+        ) values (
+                     #{id},
+                     #{name},
+                     #{brandId},
+                     #{category1Id},
+                     #{category2Id},
+                     #{category3Id},
+                     #{unitName},
+                     #{sliderUrls},
+                     #{specValue},
+                     #{status},
+                     #{auditStatus},
+                     #{auditMessage},
+                     now(),
+                     now() ,
+                     0
+                 )
+    </insert>
+    <update id="updateStatus">
+        update product set status = #{status} where id = #{id}
+    </update>
+    <update id="updateAuditStatus">
+        update product set audit_status = #{status} , audit_message=#{message} where id = #{id}
+    </update>
+    <select id="selectById" resultType="com.jasper.model.entity.product.Product">
+        select p.*, b.name as brandName, c1.name as category1Name, c2.name as category2Name, c3.name as category3Name
+        from product p,
+        brand b,
+        category c1,
+        category c2,
+        category c3
+        <where>
+            p.brand_id = b.id
+            and p.category1_id = c1.id
+            and p.category2_id = c2.id
+            and p.category3_id = c3.id
+            and p.is_deleted = 0
+            and p.id = #{id}
+        </where>
+    </select>
+    <select id="selectByPage" resultType="com.jasper.model.entity.product.Product">
+        select p.*, b.name as brandName, c1.name as category1Name, c2.name as category2Name, c3.name as category3Name
+        from product p,
+        brand b,
+        category c1,
+        category c2,
+        category c3
+        <where>
+            p.brand_id = b.id
+            and p.category1_id = c1.id
+            and p.category2_id = c2.id
+            and p.category3_id = c3.id
+            <if test="brandId != null and brandId != ''">
+                and p.brand_id = #{brandId}
+            </if>
+            <if test="category1Id != null and category1Id != ''">
+                and p.category1_id = #{category1Id}
+            </if>
+            <if test="category2Id != null and category2Id != ''">
+                and p.category2_id = #{category2Id}
+            </if>
+            <if test="category3Id != null and category3Id != ''">
+                and p.category3_id = #{category3Id}
+            </if>
+            and p.is_deleted = 0
+        </where>
+    </select>
+</mapper>

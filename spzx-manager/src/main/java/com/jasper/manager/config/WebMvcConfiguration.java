@@ -1,6 +1,7 @@
 package com.jasper.manager.config;
 
 import com.jasper.manager.interceptor.LoginAuthInterceptor;
+import com.jasper.manager.util.UserAuthProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -12,10 +13,13 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
     @Autowired
     private LoginAuthInterceptor loginAuthInterceptor ;
 
+    @Autowired
+    private UserAuthProperties userAuthProperties;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginAuthInterceptor)
-                .excludePathPatterns("/admin/system/index/login" , "/admin/system/index/generateValidateCode")
+                .excludePathPatterns(userAuthProperties.getExcludeUrls())
                 .addPathPatterns("/**");
     }
 

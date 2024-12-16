@@ -69,9 +69,9 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public SysUser gerUserInfo(String token) {
-        // TODO null 空处理
-        PowerAssert.notNull(token, "token不能为空！");
+//    public SysUser gerUserInfo(String token) { // FIXME 这里应该是最早版本，通过controller注释获取token。后续使用登录拦截器，并且把信息存到threadlocal中了。所以感觉这个传参多余
+    public SysUser getUserInfo() {
+//        PowerAssert.notNull(token, "token不能为空！");
 
         // 从threadLocal中取出 SysUser
         SysUser sysUser = SysUserThreadLocal.threadLocal.get();
@@ -95,6 +95,8 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public void addSysUser(SysUser sysUser) {
+        // TODO 这里可以添加对添加User信息的校验
+
         sysUserMapper.insertSysUser(sysUser);
     }
 

@@ -7,6 +7,7 @@ import com.jasper.model.entity.system.SysUserThreadLocal;
 import com.jasper.util.PowerAssert;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
+@Slf4j
 @Component
 public class LoginAuthInterceptor implements HandlerInterceptor {
 
@@ -27,7 +29,9 @@ public class LoginAuthInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("LoginAuthInterceptor 去 redis 缓存查看token，并且把SysUser保存到ThreadLocal");
+        // 打印请求url
+        log.info("LoginAuthInterceptor 去 redis 缓存查看token，并且把SysUser保存到ThreadLocal");
+        log.info("请求url: " + request.getRequestURL());
 
         // 获取请求方式
         String method = request.getMethod();
@@ -50,7 +54,7 @@ public class LoginAuthInterceptor implements HandlerInterceptor {
 
 
         // 重置Redis中的用户数据的有效时间
-        redisTemplate.expire("user:login:" + token , 30 , TimeUnit.MINUTES) ;
+        redisTemplate.expire("user:login:" + token , 70 , TimeUnit.MINUTES) ;
 
         // 放行
         return true;

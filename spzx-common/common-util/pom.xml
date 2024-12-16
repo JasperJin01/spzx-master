@@ -32,6 +32,13 @@
             <version>4.1.1</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+            <version>4.1.0</version>
+<!--            <scope>provided</scope>-->
+<!--            FIXME 这里不能加provided，否则就识别不到这个包。为啥啊？ -->
+        </dependency>
 
     </dependencies>
 

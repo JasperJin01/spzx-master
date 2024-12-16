@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jasper.manager.mapper.ProductSkuMapper">
+    <insert id="insertProductSku">
+        insert into product_sku
+        (id,
+         sku_code,
+         sku_name,
+         product_id,
+         thumb_img,
+         sale_price,
+         market_price,
+         cost_price,
+         stock_num,
+         sku_spec,
+         weight,
+         volume,
+         create_time,
+         update_time,
+         is_deleted)
+        values (#{id},
+                #{skuCode},
+                #{skuName},
+                #{productId},
+                #{thumbImg},
+                #{salePrice},
+                #{marketPrice},
+                #{costPrice},
+                #{stockNum},
+                #{skuSpec},
+                #{weight},
+                #{volume},
+                now(),
+                now(),
+                0)
+    </insert>
+    <select id="selectByProductId" resultType="com.jasper.model.entity.product.ProductSku">
+        select * from product_sku where product_id = #{productId} and is_deleted=0
+    </select>
+</mapper>

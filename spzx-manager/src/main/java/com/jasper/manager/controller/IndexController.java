@@ -1,5 +1,6 @@
 package com.jasper.manager.controller;
 
+import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import com.jasper.manager.service.SysMenuService;
 import com.jasper.manager.service.SysUserService;
 import com.jasper.manager.service.ValidateCodeService;
@@ -10,6 +11,9 @@ import com.jasper.model.vo.system.LoginVo;
 import com.jasper.model.vo.system.SysMenuVo;
 import com.jasper.model.vo.system.ValidateCodeVo;
 import com.jasper.util.PowerAssert;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +21,8 @@ import java.util.List;
 
 // TODO 跨域
 
+@Tag(name = "系统管理-首页")
+@Slf4j
 @RestController
 @CrossOrigin(allowCredentials = "true", originPatterns = "*", allowedHeaders = "*")
 @RequestMapping(value = "/admin/system/index")
@@ -36,9 +42,10 @@ public class IndexController {
     @Autowired
     private SysMenuService sysMenuService;
 
+    @Operation(summary = "登录")
     @PostMapping("/login")
     public Result<LoginVo> login(@RequestBody LoginDto loginDto) { // TODO 不添加 @RequestBody，前端发过来的数据不能正确解析
-        System.out.println("loginDto = " + loginDto);
+        log.info("login::loginDto = " + loginDto);
         LoginVo loginVo = sysUserService.login(loginDto);
         PowerAssert.notNull(loginVo, "用户名或者密码错误");
 
@@ -49,8 +56,10 @@ public class IndexController {
 
     // FIXME 前端有问题，传不过来token
     @GetMapping("/getUserInfo")
-    public Result<SysUser> getUserInfo(@RequestHeader("token") String token) { // TODO 这个是header传参，所以没有写@。这不怕出错吗？
-        SysUser sysUser = sysUserService.gerUserInfo(token);
+//    public Result<SysUser> getUserInfo(@RequestHeader("token") String token) { // TODO 这个是header传参，所以没有写@。这不怕出错吗？
+    public Result<SysUser> getUserInfo() {
+//        SysUser sysUser = sysUserService.getUserInfo(token);
+        SysUser sysUser = sysUserService.getUserInfo();
 
         return Result.ok(sysUser);
     }

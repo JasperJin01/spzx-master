@@ -5,6 +5,7 @@ import com.jasper.model.vo.common.Result;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+// 这种处理方法并不会在业务层被感知到，而interceptor是业务逻辑本身的一部分（例如用户认证，使用登录拦截器）
 @RestControllerAdvice // TODO 专用于 RESTful 风格 API 的全局增强注解（意思是所有的RestController都需要注入这个方法）
 public class GlobalExceptionHandler {
 
