@@ -1,14 +1,13 @@
 package com.jasper.manager.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.jasper.model.dto.system.SysUserDto;
 import com.jasper.model.entity.system.SysUser;
 
 import java.util.List;
 
-// 这个mapper用不用加@Mapper注释？
-// 如果Application添加@MapperScan了就不用添加@Mapper
-
-public interface SysUserMapper {
+// 这里引入了BaseMapper
+public interface SysUserMapper extends BaseMapper<SysUser> {
 
     SysUser selectByUserName(String userName);
 

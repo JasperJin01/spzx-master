@@ -2,6 +2,7 @@ package com.jasper.manager.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.jasper.manager.mapper.SysUserMapper;
@@ -22,7 +23,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 @Service
-public class SysUserServiceImpl implements SysUserService {
+public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
     @Autowired
     private SysUserMapper sysUserMapper;
@@ -97,6 +98,12 @@ public class SysUserServiceImpl implements SysUserService {
     public void addSysUser(SysUser sysUser) {
         // TODO 这里可以添加对添加User信息的校验
 
+        // todo 测试 mybatisplus
+
+        // 使用mybatisplus插入用户
+//        baseMapper.insert(sysUser);
+
+//         使用声明方法插入用户
         sysUserMapper.insertSysUser(sysUser);
     }
 

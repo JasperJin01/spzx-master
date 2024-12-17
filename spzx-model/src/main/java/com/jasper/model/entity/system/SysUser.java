@@ -1,9 +1,11 @@
 package com.jasper.model.entity.system;
 
 import com.jasper.model.entity.base.BaseEntity;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class SysUser extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
