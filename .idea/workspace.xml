@@ -5,17 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2dfd026-b90e-46c0-8eae-07745cec8047" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/spzx-manager/src/test/java/MyBatisPlusTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-model/src/main/java/com/jasper/model/dto/product/ProductItemVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-model/src/main/java/com/jasper/model/dto/product/ProductSkuDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-model/src/main/java/com/jasper/model/vo/product/IndexVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-server-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-server-gateway/src/main/java/com/jasper/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service-client/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service-client/service-product-client/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service-client/service-product-client/src/main/java/com/jasper/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service-client/service-user-client/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service-client/service-user-client/src/main/java/com/jasper/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-cart/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-cart/src/main/java/com/jasper/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-order/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-order/src/main/java/com/jasper/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-pay/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-pay/src/main/java/com/jasper/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/java/com/jasper/spzx/product/ProductApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/java/com/jasper/spzx/product/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/java/com/jasper/spzx/product/controller/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/java/com/jasper/spzx/product/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/java/com/jasper/spzx/product/mapper/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/java/com/jasper/spzx/product/mapper/ProductDetailMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/java/com/jasper/spzx/product/mapper/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/java/com/jasper/spzx/product/mapper/ProductSkuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/java/com/jasper/spzx/product/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/java/com/jasper/spzx/product/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/java/com/jasper/spzx/product/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/java/com/jasper/spzx/product/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/java/com/jasper/spzx/product/utils/CategoryHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/resources/application-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/resources/mapper/product/CategoryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/resources/mapper/product/ProductDetailMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/resources/mapper/product/ProductMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/resources/mapper/product/ProductSkuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-product/src/test/java/SpringTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-user/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spzx-service/service-user/src/main/java/com/jasper/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spzx-common/common-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-common/common-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-common/common-service/src/main/java/com/jasper/common/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-common/common-service/src/main/java/com/jasper/common/exception/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spzx-common/common-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-common/common-util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/mapper/SysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/mapper/SysUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/jasper/manager/service/impl/SysUserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spzx-model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-model/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spzx-model/src/main/java/com/jasper/model/entity/system/SysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-model/src/main/java/com/jasper/model/entity/system/SysUser.java" afterDir="false" />
     </list>
@@ -50,6 +89,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/6.0.7/spring-core-6.0.7-sources.jar!/org/springframework/core/AliasRegistry.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -65,48 +107,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_directory_selection": "/Users/jmjin/Developer/IdeaDemo/spzx-master/spzx-model/src/main/java/com/jasper",
-    "last_opened_file_path": "/Users/jmjin/Developer/IdeaDemo/spzx-master/spzx-model/src/main/java/com/jasper/model/entity/base",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "d49a40a8be94efe46b555ec396c0e681",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/jmjin/Developer/IdeaDemo/spzx-master/spzx-model/src/main/java/com/jasper&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jmjin/Developer/IdeaDemo/spzx-master/spzx-service/service-product/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;cn.yiiguxing.plugin.translate&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;fd3b0226765e6e44dd9d23b0d5c83f47&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.jasper.manager.mapper" />
-      <recent name="com.jasper.manager.service.impl" />
-      <recent name="com.jasper.manager.service.impl\" />
-      <recent name="com.jasper.manager.service" />
-      <recent name="com.jasper.manager.ser" />
+      <recent name="com.jasper.spzx.product.mapper" />
+      <recent name="com.jasper.spzx.product.service.impl" />
+      <recent name="com.jasper.spzx.product.service.im" />
+      <recent name="com.jasper.spzx.product.service" />
+      <recent name="com.jasper.spzx.product.s" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spzx-service/service-product/src/main/resources" />
       <recent name="$PROJECT_DIR$/spzx-model/src/main/java/com/jasper/model/entity/base" />
       <recent name="$PROJECT_DIR$/spzx-model/src/main/java/com/jasper/model/entity" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spzx-service/service-product/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/spzx-service" />
+      <recent name="$PROJECT_DIR$/spzx-service-client" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -116,7 +168,14 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MyBatisPlusTests.insertSysUserTest">
+  <component name="RunManager" selected="Spring Boot.ProductApplication">
+    <configuration name="SpringTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SpringTest" />
+      <module name="service-product" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyBatisPlusTests.insertSysUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spzx-manager" />
       <option name="PACKAGE_NAME" value="" />
@@ -150,11 +209,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProductApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="service-product" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.jasper.spzx.product.ProductApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jasper.spzx.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ProductApplication" />
+        <item itemvalue="Application.SpringTest" />
+        <item itemvalue="Spring Boot.ManagerApplication" />
         <item itemvalue="JUnit.MyBatisPlusTests.insertSysUserTest" />
         <item itemvalue="JUnit.MyBatisPlusTests.test" />
-        <item itemvalue="Spring Boot.ManagerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +251,13 @@
       <workItem from="1733300083962" duration="5084000" />
       <workItem from="1733386263035" duration="4840000" />
       <workItem from="1734023747528" duration="2348000" />
-      <workItem from="1734080035013" duration="17755000" />
+      <workItem from="1734080035013" duration="20359000" />
+      <workItem from="1734454811295" duration="22579000" />
+      <workItem from="1734753499369" duration="875000" />
+      <workItem from="1735061172455" duration="1246000" />
+      <workItem from="1735064850743" duration="1337000" />
+      <workItem from="1735921404378" duration="598000" />
+      <workItem from="1737453571815" duration="632000" />
     </task>
     <task id="LOCAL-00001" summary="添加登录功能">
       <option name="closed" value="true" />
@@ -339,7 +419,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734326658228</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="引入了MyBatisplus包，对根项目进行的重命名">
+      <option name="closed" value="true" />
+      <created>1734450577733</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1734450577733</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +466,8 @@
     <MESSAGE value="添加分类品牌服务" />
     <MESSAGE value="添加产品规格CRUD功能" />
     <MESSAGE value="添加product相关功能（待测试优化）、接口文档" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加product相关功能（待测试优化）、接口文档" />
+    <MESSAGE value="引入了MyBatisplus包，对根项目进行的重命名" />
+    <option name="LAST_COMMIT_MESSAGE" value="引入了MyBatisplus包，对根项目进行的重命名" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

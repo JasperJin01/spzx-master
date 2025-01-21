@@ -2,6 +2,7 @@ package com.jasper.common.exception;
 
 
 import com.jasper.model.vo.common.Result;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -25,6 +26,13 @@ public class GlobalExceptionHandler {
         e.printStackTrace();
 
         return Result.fail(e.getMessage());
+    }
+
+    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+    public Result httpRequestMethodNotSupportedExceptionHandler(HttpRequestMethodNotSupportedException e) {
+        System.out.println("程序出现请求方法不支持异常，打印异常信息：");
+        e.printStackTrace();
+        return Result.fail("请求方法不支持");
     }
 
 

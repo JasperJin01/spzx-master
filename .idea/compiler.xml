@@ -7,22 +7,42 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spzx-model" />
         <module name="common-util" />
+        <module name="service-product-client" />
         <module name="common-service" />
+        <module name="service-user-client" />
+        <module name="service-order" />
+        <module name="service-pay" />
+        <module name="spzx-model" />
+        <module name="spzx-server-gateway" />
+        <module name="service-cart" />
+        <module name="service-product" />
+        <module name="service-user" />
         <module name="spzx-manager" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spzx-master" target="17" />
+      <module name="spzx-server-client" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="common-service" options="-parameters" />
       <module name="common-util" options="-parameters" />
+      <module name="service-cart" options="-parameters" />
+      <module name="service-order" options="-parameters" />
+      <module name="service-pay" options="-parameters" />
+      <module name="service-product" options="-parameters" />
+      <module name="service-product-client" options="-parameters" />
+      <module name="service-user" options="-parameters" />
+      <module name="service-user-client" options="-parameters" />
       <module name="spzx-manager" options="-parameters" />
       <module name="spzx-model" options="-parameters" />
+      <module name="spzx-server-client" options="" />
+      <module name="spzx-server-gateway" options="-parameters" />
+      <module name="spzx-service" options="" />
+      <module name="spzx-service-client" options="" />
     </option>
   </component>
 </project>
