@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * 首页接口管理
+ */
 @RestController
 @RequestMapping("/api/product/")
 @CrossOrigin(allowCredentials = "true", originPatterns = "*", allowedHeaders = "*")
@@ -27,10 +30,15 @@ public class IndexController {
     private ProductService productService;
 
 
+    /**
+     * 首页接口
+     * @return 首页数据（一级分类、畅销商品）
+     */
     @GetMapping("index")
     public Result<IndexVo> index() {
         List<Category> categoryList = categoryService.findOneCategory();// 一级分类
         List<ProductSku> productSkus = productService.findProductSkuBySale();// 畅销商品
+        
         IndexVo indexVo = new IndexVo();
         indexVo.setCategoryList(categoryList);
         indexVo.setProductSkuList(productSkus);

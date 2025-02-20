@@ -27,6 +27,12 @@
         where
         id = #{id}
     </update>
+    <update id="deleteById">
+        update category_brand set
+        is_deleted = 1
+        where
+        id = #{id}
+    </update>
     <select id="selectByPage" resultType="com.jasper.model.entity.product.CategoryBrand">
         SELECT
         cb.id,

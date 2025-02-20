@@ -70,7 +70,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     }
 
     @Override
-//    public SysUser gerUserInfo(String token) { // FIXME 这里应该是最早版本，通过controller注释获取token。后续使用登录拦截器，并且把信息存到threadlocal中了。所以感觉这个传参多余
+// FIXME 这里应该是最早版本，通过controller注释获取token。后续使用登录拦截器(LoginAuthInterceptor)，并且把信息存到threadlocal中了
     public SysUser getUserInfo() {
 //        PowerAssert.notNull(token, "token不能为空！");
 

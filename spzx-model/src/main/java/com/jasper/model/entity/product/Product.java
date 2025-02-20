@@ -20,7 +20,7 @@ public class Product extends BaseEntity {
 	private Integer auditStatus;			// 审核状态
 	private String auditMessage;			// 审核信息
 
-	// 扩展的属性，用来封装响应的数据
+	// 扩展的属性（类别的名称），用来封装响应的数据
 	private String brandName;				// 品牌
 	private String category1Name;			// 一级分类
 	private String category2Name;			// 二级分类

@@ -32,12 +32,24 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductDetailMapper productDetailMapper;
 
+
+    /**
+     * 查询畅销商品
+     * @return 畅销商品列表
+     */
     @Override
     public List<ProductSku> findProductSkuBySale() {
         List<ProductSku> productSkuList = productSkuMapper.selectProductSkuBySale();
         return productSkuList;
     }
 
+    /**
+     * 分页查询商品列表
+     * @param page 当前页码
+     * @param limit 每页条数
+     * @param productSkuDto 查询条件
+     * @return 分页查询结果
+     */
     @Override
     public PageInfo<ProductSku> findByPage(Integer page, Integer limit, ProductSkuDto productSkuDto) {
         PageHelper.startPage(page,limit);
@@ -46,6 +58,12 @@ public class ProductServiceImpl implements ProductService {
         return pageInfo;
     }
 
+    
+    /**
+     * 根据skuId查询商品详情
+     * @param skuId skuId
+     * @return 商品详情
+     */
     @Override
     public ProductItemVo item(Long skuId) {
 

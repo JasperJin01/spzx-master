@@ -43,4 +43,9 @@ public class CategoryBrandServiceImpl implements CategoryBrandService {
 
         return brands;
     }
+
+    @Override
+    public void deleteById(Long id) {
+        categoryBrandMapper.deleteById(id);
+    }
 }

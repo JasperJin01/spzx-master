@@ -10,7 +10,6 @@ import java.util.List;
 public interface ProductService {
     List<ProductSku> findProductSkuBySale();
 
-
     PageInfo<ProductSku> findByPage(Integer page, Integer limit, ProductSkuDto productSkuDto);
 
     ProductItemVo item(Long skuId);

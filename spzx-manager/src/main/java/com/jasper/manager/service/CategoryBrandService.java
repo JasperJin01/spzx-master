@@ -15,4 +15,6 @@ public interface CategoryBrandService {
     void updateById(CategoryBrand categoryBrand);
 
     List<Brand> findBrandByCategoryId(Long categoryId);
+
+    void deleteById(Long id);
 }

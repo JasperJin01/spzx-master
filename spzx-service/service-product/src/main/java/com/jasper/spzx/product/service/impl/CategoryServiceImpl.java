@@ -20,23 +20,37 @@ public class CategoryServiceImpl implements CategoryService {
     @Autowired
     RedisTemplate redisTemplate;
 
+    // fixme 这些都是在查什么啊？
+
+    /**
+     * 查询一级分类
+     * @return 一级分类列表
+     */
     @Override
     public List<Category> findOneCategory() {
         List<Category> firstCategories = categoryMapper.selectOneCategories();
         return firstCategories;
     }
 
+    /**
+     * 查询分类树（全部分类）
+     * @return 分类树
+     */
     @Cacheable(value = "findCategoryTree", key = "'all'")
     @Override
     public List<Category> findCategoryTree() {
         // 查询缓存
-        // 缓存有返回结果
-        // 缓存没有查询数据库
-        // 数据库有返回结果，并且存入缓存
+        // 缓存有 返回结果
+        // 缓存没有 查询数据库 返回结果，并且存入缓存
         List<Category> categories = categoryMapper.selectAllCategories();
         return CategoryHelper.buildTree(categories);
     }
 
+    /**
+     * 根据 parentID 查询分类
+     * @param parentId
+     * @return 分类树
+     */
     @Cacheable(value = "findCategoryByParentId",key = "#parentId")
     @Override
     public List<Category> findCategoryByParentId(Long parentId) {

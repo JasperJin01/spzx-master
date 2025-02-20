@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * 商品单位管理
+ */
 @RestController
 @RequestMapping(value="/admin/product/productUnit")
 @CrossOrigin(allowCredentials = "true" , originPatterns = "*" , allowedHeaders = "*")
@@ -16,6 +19,10 @@ public class ProductUnitController {
     @Autowired
     ProductUnitService productUnitService;
 
+    /**
+     * 查询所有商品单位
+     * @return
+     */
     @GetMapping("findAll")
     public Result<List<ProductUnit>> findAll() {
         List<ProductUnit> productUnitList = productUnitService.selectAll();

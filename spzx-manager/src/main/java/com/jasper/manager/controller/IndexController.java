@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-// TODO 跨域
+
 
 @Tag(name = "系统管理-首页")
 @Slf4j
@@ -27,11 +27,6 @@ import java.util.List;
 @CrossOrigin(allowCredentials = "true", originPatterns = "*", allowedHeaders = "*")
 @RequestMapping(value = "/admin/system/index")
 public class IndexController {
-
-    // NOTE @RequestBody 把前端传过来的数据解析到对象中。
-    //  如果是表单的话，没有@RequestBody似乎也能正常运行。
-    //  如果是json格式的文件，似乎必须要加上，否则会报415类型错误。
-    //  注释总结看一下这篇文章 https://javaguide.cn/system-design/framework/spring/spring-common-annotations.html
 
     @Autowired
     private SysUserService sysUserService;
@@ -42,6 +37,11 @@ public class IndexController {
     @Autowired
     private SysMenuService sysMenuService;
 
+    /**
+     * 登录
+     * @param loginDto
+     * @return
+     */
     @Operation(summary = "登录")
     @PostMapping("/login")
     public Result<LoginVo> login(@RequestBody LoginDto loginDto) { // TODO 不添加 @RequestBody，前端发过来的数据不能正确解析
@@ -50,13 +50,9 @@ public class IndexController {
         PowerAssert.notNull(loginVo, "用户名或者密码错误");
 
         return Result.ok(loginVo);
-
     }
 
-
-    // FIXME 前端有问题，传不过来token
     @GetMapping("/getUserInfo")
-//    public Result<SysUser> getUserInfo(@RequestHeader("token") String token) { // TODO 这个是header传参，所以没有写@。这不怕出错吗？
     public Result<SysUser> getUserInfo() {
 //        SysUser sysUser = sysUserService.getUserInfo(token);
         SysUser sysUser = sysUserService.getUserInfo();

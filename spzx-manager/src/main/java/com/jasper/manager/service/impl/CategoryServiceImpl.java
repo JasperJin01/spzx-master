@@ -42,6 +42,10 @@ public class CategoryServiceImpl implements CategoryService {
                 .doRead();
     }
 
+    /**
+     * 导出分类为表格
+     * @param response（直接将导出的表格写入到response中）
+     */
     @SneakyThrows
     @Override
     public void exportData(HttpServletResponse response) {
@@ -49,10 +53,11 @@ public class CategoryServiceImpl implements CategoryService {
         List<CategoryExcelVo> categoryExcelVos = new ArrayList<>();
         for (Category category: categories) {
             CategoryExcelVo categoryExcelVo = new CategoryExcelVo();
-            // FIXME 这里的 CategoryExcelVo.class 可以不传吗？
+            // note spring提供的工具，通过反射将源对象的属性值赋值到目标对象中
             BeanUtils.copyProperties(category, categoryExcelVo, CategoryExcelVo.class);
             categoryExcelVos.add(categoryExcelVo);
         }
+        // 将导出的表格写入到response中
         EasyExcel.write(response.getOutputStream(), CategoryExcelVo.class)
                 .sheet("分类数据")
                 .doWrite(categoryExcelVos);

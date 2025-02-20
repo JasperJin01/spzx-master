@@ -16,13 +16,21 @@ public class SysMenuController {
     @Autowired
     private SysMenuService sysMenuService;
 
-
+    /**
+     * 查询所有菜单节点
+     * @return
+     */
     @GetMapping("/findNodes")
     public Result<List<SysMenu>> findNodes() {
         List<SysMenu> list = sysMenuService.findNodesByTree();
         return Result.ok(list);
     }
 
+    /**
+     * 更新菜单
+     * @param sysMenu
+     * @return
+     */
     @PutMapping("/updateSysMenu")
     public Result updateSysMenu(@RequestBody SysMenu sysMenu) {
         sysMenuService.updateSysMenu(sysMenu);
@@ -30,6 +38,11 @@ public class SysMenuController {
 
     }
 
+    /**
+     * 添加菜单
+     * @param sysMenu
+     * @return
+     */
     @PostMapping("/addSysMenu")
     public Result addSysMenu(@RequestBody SysMenu sysMenu) {
         sysMenuService.addSysMenu(sysMenu);

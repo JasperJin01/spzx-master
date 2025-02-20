@@ -14,4 +14,6 @@ public interface CategoryBrandMapper {
     void updateById(CategoryBrand categoryBrand);
 
     List<Brand> selectBrandByCategoryId(Long categoryId);
+
+    void deleteById(Long id);
 }

@@ -5,11 +5,16 @@ import com.jasper.manager.service.SysRoleService;
 import com.jasper.model.dto.system.SysRoleDto;
 import com.jasper.model.entity.system.SysRole;
 import com.jasper.model.vo.common.Result;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+/**
+ * 系统角色管理
+ */
+@Slf4j
 @RestController
 @RequestMapping("/admin/system/sysRole")
 @CrossOrigin(allowCredentials = "true", originPatterns = "*", allowedHeaders = "*")
@@ -18,11 +23,20 @@ public class SysRoleController {
     @Autowired
     private SysRoleService sysRoleService;
 
+    /**
+     * 分页查询系统角色列表
+     * @param page
+     * @param limit
+     * @param sysRoleDto
+     * @return
+     */
     @GetMapping("/getSysRoleListByPage/{page}/{limit}")
     public Result<PageInfo<SysRole>> getSysRoleListByPage(@PathVariable Integer page,
-                                                  @PathVariable Integer limit,
+                                                          @PathVariable Integer limit,
                                                           SysRoleDto sysRoleDto) {
-        System.out.println("sysRoleDto = " + sysRoleDto);
+        // 前端通过params传递 SysRoleDto，不需要添加注释
+        log.info("sysRoleDto = " + sysRoleDto);
+
         PageInfo<SysRole> pageInfo  = sysRoleService.getSysRoleListByPage(page, limit, sysRoleDto);
         return Result.ok(pageInfo);
     }
